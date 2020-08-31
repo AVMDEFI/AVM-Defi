@@ -95,9 +95,9 @@ contract Adapter is owned{
     
     using Address for address;
     
-    Gateway public gateway = Gateway(0x28Eae6a51f5f0aaa692A1c77792186ee5403fB80);
-    address public avmASMToken = address(0x92B29CbAcd20Ef3FfA791B6189BCE1385710860f);
-    address public signAddr = address(0x56C740EB869C5c4499645394cDEAe6D166047736);
+    Gateway public gateway = Gateway(0xd99818bc3A3e8b575653d91fC4BF22dDfA8E78AE);
+    address public avmASMToken = address(0x49674B00275254e9EBFc50aa8211F8Eb72aC7e90);
+    address public signAddr = address(0xD196c8cFc946dA1E67539Ea7646AdC3fB0d3F4aF);
 
     address owner;
     mapping(bytes32 => bool) usedHash;
@@ -109,7 +109,6 @@ contract Adapter is owned{
     function mint(address crosschainDestination, uint256 _amount, uint256 nonce, uint8 v, bytes32 r, bytes32 s ) public returns (bool success) {
         
         require(!crosschainDestination.isContract());
-        require(msg.sender == crosschainDestination);
         bytes32 msgHash = getHash(crosschainDestination, _amount, nonce);
         require(!usedHash[msgHash]);
         require(RecoverAddress(msgHash, v, r, s, signAddr));

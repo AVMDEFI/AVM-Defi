@@ -389,12 +389,12 @@ contract Gateway is owned {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    IERC20 public avmASM = IERC20(0x92B29CbAcd20Ef3FfA791B6189BCE1385710860f);
+    IERC20 public avmASM = IERC20(0x49674B00275254e9EBFc50aa8211F8Eb72aC7e90);
 
     
-    token avmASMToken = token(0x92B29CbAcd20Ef3FfA791B6189BCE1385710860f); 
-    address public reward = address(0x56C740EB869C5c4499645394cDEAe6D166047736);
-    address public signAddr = address(0x56C740EB869C5c4499645394cDEAe6D166047736);
+    token avmASMToken = token(0x49674B00275254e9EBFc50aa8211F8Eb72aC7e90); 
+    address public reward = address(0xD196c8cFc946dA1E67539Ea7646AdC3fB0d3F4aF);
+    address public signAddr = address(0xD196c8cFc946dA1E67539Ea7646AdC3fB0d3F4aF);
     
     event getBrunInfo(address crosschainDestination, uint256 amount);
     
